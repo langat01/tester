@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quickmart Careers - Join Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #1d3557;
+        }
+
+        h3 {
+            color: #1d3557;
+            margin-bottom: 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1d3557;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #a8dadc;
+        }
+
+        .cta-button {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #c1121f;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1563013546-73e4b9e2d3a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 180px;
+        }
+
+        .stat .number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #a8dadc;
+        }
+
+        .countdown-timer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .countdown-timer h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .timer div {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            min-width: 80px;
+        }
+
+        .timer div span {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Job Grid */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .job-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            position: relative;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-card h3 {
+            color: #1d3557;
+            font-size: 1.5rem;
+        }
+
+        .job-stats {
+            margin: 15px 0;
+        }
+
+        .positions-left {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e63946;
+        }
+
+        .salary {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #1d3557;
+            margin: 8px 0;
+        }
+
+        .pay-date {
+            display: block;
+            color: #666;
+        }
+
+        .progress-container {
+            margin: 15px 0;
+        }
+
+        .progress-bar {
+            background-color: #e9ecef;
+            border-radius: 5px;
+            height: 20px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            background-color: #4caf50;
+            height: 100%;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            font-size: 0.7rem;
+            line-height: 20px;
+            transition: width 1s ease;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .apply-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #457b9d;
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .apply-btn:hover {
+            background-color: #1d3557;
+        }
+
+        .tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .filling-fast {
+            background-color: #ffdd00;
+            color: #333;
+        }
+
+        .most-popular {
+            background-color: #ff9e00;
+            color: white;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background-color: #f1faee;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: #457b9d;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item h4 {
+            margin-bottom: 15px;
+            color: #1d3557;
+        }
+
+        .bank-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .bank-logo {
+            height: 40px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .bank-logo:hover {
+            opacity: 1;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background-color: #457b9d;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step h4 {
+            margin-bottom: 15px;
+            color: #1d3557;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: #f1faee;
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+            padding: 20px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .testimonial-carousel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+
+        .testimonial {
+            scroll-snap-align: start;
+            flex: 0 0 calc(33.333% - 20px);
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial h5 {
+            color: #1d3557;
+            margin-bottom: 5px;
+        }
+
+        .testimonial span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d3557;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+            color: #a8dadc;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #a8dadc;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #a8dadc;
+        }
+
+        .subscribe-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .subscribe-form button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .stats-container {
+                gap: 1rem;
+            }
+            
+            .stat {
+                min-width: 140px;
+            }
+            
+            .timer {
+                gap: 0.8rem;
+            }
+            
+            .timer div {
+                min-width: 60px;
+                padding: 10px;
+            }
+            
+            .timer div span {
+                font-size: 1.8rem;
+            }
+            
+            .testimonial {
+                flex: 0 0 calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Quick<span>mart</span></a>
+            <nav>
+                <a href="#jobs">Available Jobs</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#process">Application Process</a>
+                <a href="#stories">Success Stories</a>
+                <a href="#apply" class="cta-button">Apply Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Join the Quickmart Family</h1>
+            <p>Build your career with Kenya's fastest-growing retail chain.</p>
+            
+            <div class="stats-container">
+                <div class="stat">
+                    <span class="number">73+</span>
+                    Open Positions
+                </div>
+                <div class="stat">
+                    <span class="number">Ksh 18K-34K</span>
+                    Monthly
+                </div>
+                <div class="stat">
+                    <span class="number">5th</span>
+                    Pay Date
+                </div>
+            </div>
+            
+            <div class="countdown-timer">
+                <h3>Application Deadline:</h3>
+                <div class="timer">
+                    <div><span id="days">07</span>days</div>
+                    <div><span id="hours">14</span>hours</div>
+                    <div><span id="minutes">16</span>minutes</div>
+                    <div><span id="seconds">09</span>seconds</div>
+                </div>
+            </div>
+            
+            <a href="#apply" class="cta-button">Limited Time Offer - Apply Now!</a>
+        </div>
+    </section>
+
+    <!-- Available Jobs Section -->
+    <section id="jobs">
+        <div class="container">
+            <h2>High Demand Positions</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Choose from our diverse range of career opportunities. All positions offer competitive salaries, guaranteed monthly payments, and excellent growth prospects with immediate start dates.</p>
+            
+            <div class="job-grid">
+                <!-- Cleaner Job Card -->
+                <div class="job-card">
+                    <span class="tag filling-fast">Filling Fast</span>
+                    <h3>Cleaners</h3>
+                    <p>Maintain store cleanliness and hygiene standards</p>
+                    <div class="job-stats">
+                        <span class="positions-left">43 positions left</span>
+                        <span class="salary">Ksh 18,000/month</span>
+                        <span class="pay-date">Paid monthly on 5th</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 22%;">22%</div>
+                        </div>
+                        <span class="progress-text">22% available</span>
+                    </div>
+                    <a href="#apply" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <!-- Cashier Job Card -->
+                <div class="job-card">
+                    <span class="tag most-popular">Most Popular</span>
+                    <span class="tag filling-fast">Filling Fast</span>
+                    <h3>Cashiers</h3>
+                    <p>Handle customer transactions and provide excellent service</p>
+                    <div class="job-stats">
+                        <span class="positions-left">22 positions left</span>
+                        <span class="salary">Ksh 21,000/month</span>
+                        <span class="pay-date">Paid monthly on 5th</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 11%;">11%</div>
+                        </div>
+                        <span class="progress-text">11% available</span>
+                    </div>
+                    <a href="#apply" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <!-- Store Keeper Job Card -->
+                <div class="job-card">
+                    <span class="tag filling-fast">Filling Fast</span>
+                    <h3>Store Keepers</h3>
+                    <p>Manage inventory and stock organization</p>
+                    <div class="job-stats">
+                        <span class="positions-left">68 positions left</span>
+                        <span class="salary">Ksh 34,000/month</span>
+                        <span class="pay-date">Paid monthly on 5th</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 34%;">34%</div>
+                        </div>
+                        <span class="progress-text">34% available</span>
+                    </div>
+                    <a href="#apply" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2>Why Choose Quickmart</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">We believe in taking care of our employees. Join thousands of satisfied team members who enjoy competitive benefits, growth opportunities, and a supportive work environment.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h4>Reliable Payment System</h4>
+                    <p>Get paid on time, every time. Your salary is guaranteed on the 5th of each month with multiple payment options.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Flexible Working Hours</h4>
+                    <p>Work-life balance with reasonable shift schedules, time off when needed, and weekend rotations.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Job Security</h4>
+                    <p>Join a stable, growing company with consistent employment opportunities and long-term career prospects.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Career Growth</h4>
+                    <p>Advance your career with comprehensive training programs, mentorship, and promotion opportunities.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4>Health Benefits</h4>
+                    <p>Comprehensive healthcare coverage for you and your family including medical, dental, and vision.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h4>Performance Bonuses</h4>
+                    <p>Earn extra income through our performance-based bonus system, employee recognition programs, and incentives.</p>
+                </div>
+            </div>
+            
+            <div class="bank-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/M-PESA_LOGO-01.svg/2560px-M-PESA_LOGO-01.svg.png" alt="M-Pesa" class="bank-logo" style="height: 35px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Equity_Bank_Logo.svg/1280px-Equity_Bank_Logo.svg.png" alt="Equity Bank" class="bank-logo" style="height: 30px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/KCB_Bank_Logo.svg/2560px-KCB_Bank_Logo.svg.png" alt="KCB" class="bank-logo" style="height: 30px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/National_Bank_of_Kenya_logo.svg/1280px-National_Bank_of_Kenya_logo.svg.png" alt="National Bank" class="bank-logo" style="height: 35px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/ABSA_Kenya.svg/1280px-ABSA_Kenya.svg.png" alt="Absa" class="bank-logo" style="height: 30px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process Section -->
+    <section id="process">
+        <div class="container">
+            <h2>Quick & Easy Process</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Getting started with Quickmart is easy. Follow these simple steps to begin your career journey with us. Most applications are processed within 48 hours.</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Submit Application</h4>
+                    <p>Fill out our simple online application form with your personal details and preferred position.</p>
+                    <p><strong>Required: Valid KRA PIN</strong></p>
+                    <p><em>5 minutes</em></p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Document Verification</h4>
+                    <p>Our HR team will verify your documents and credentials within 24-48 hours.</p>
+                    <p><strong>Required: Valid ID</strong></p>
+                    <p><em>24-48 hours</em></p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Interview Process</h4>
+                    <p>Attend a brief interview either in-person or virtually based on your location.</p>
+                    <p><strong>Duration: 15-30 minutes</strong></p>
+                    <p><em>Same week</em></p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Start Working</h4>
+                    <p>Complete onboarding and begin your career journey with Quickmart.</p>
+                    <p><strong>Timeline: 1-2 weeks</strong></p>
+                    <p><em>Immediate</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="stories" class="testimonials">
+        <div class="container">
+            <h2>What Our Employees Say</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Don't just take our word for it. Hear from our satisfied team members who have built successful careers with Quickmart across Kenya.</p>
+            
+            <div class="testimonial-carousel">
+                <div class="testimonial">
+                    <p>"Working at Quickmart has been a blessing. The payment is always on time, and the management treats us with respect. I've been able to support my family comfortably and even save for the future."</p>
+                    <h5>Mary Wanjiku</h5>
+                    <span>Cashier - Nairobi Branch (Westlands, 2 years)</span>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"The career growth opportunities here are amazing. I started as a cleaner and now I'm a store keeper. Quickmart invests in their employees' development through training and mentorship programs."</p>
+                    <h5>John Mwangi</h5>
+                    <span>Store Keeper - Mombasa Branch (Nyali, 3 years)</span>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"As a female driver, I was worried about finding a supportive workplace. Quickmart has exceeded my expectations with their inclusive culture, fair treatment, and excellent working conditions."</p>
+                    <h5>Grace Akinyi</h5>
+                    <span>Driver - Kisumu Branch (Kisumu, 1.5 years)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Quickmart</h4>
+                    <p>Kenya's fastest-growing retail chain, committed to providing quality products and exceptional career opportunities.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#jobs">Available Jobs</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#process">Application Process</a></li>
+                        <li><a href="#stories">Testimonials</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> careers@quickmart.co.ke</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri 8AM-6PM</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Stay Updated</h4>
+                    <p>Get notified about new job openings and company updates.</p>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Quickmart. All rights reserved. | Join Our Team Today!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Countdown Timer Logic
+        function updateCountdown() {
+            // Set the deadline date (year, month (0-indexed), day, hour, minute, second)
+            const deadline = new Date(2024, 11, 15, 23, 59, 59); // Example: Dec 15, 2024
+            const now = new Date();
+            const difference = deadline - now;
+
+            // Calculate time units
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // Update the HTML
+            document.getElementById("days").textContent = days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+
+            // If the countdown is over
+            if (difference < 0) {
+                clearInterval(countdownTimer);
+                document.querySelector(".countdown-timer").innerHTML = "<h3>Application Closed</h3>";
+            }
+        }
+
+        // Run the countdown immediately and then every second
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+
+        // Animate progress bars when they come into view
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+
+        // Run animation when page loads
+        window.addEventListener('load', animateProgressBars);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
